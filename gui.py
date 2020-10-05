@@ -9,7 +9,7 @@ def make_the_Gif(chr1,chr2,chr3,chr4):
     return Lissajous_Figures.make(a1, num1,a2, num2)
 def get(E, chr):
     E=Entry()
-    chr=floatE.get()
+    chr=E.get()
     return chr
 
 root = Tk()
