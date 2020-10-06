@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np 
 from moviepy.video.io.bindings import mplfig_to_npimage
 import moviepy.editor as mpy
-def make(a1, num1,a2, num2):
+def make(a1, num1,a2, num2, chr):
     dur = 2
     fig_mpl, ax = plt.subplots(1, figsize=(5,5), facecolor='white')
     aa = np.linspace(-4 * (np.pi), 4 * (np.pi), 240000) 
@@ -16,4 +16,4 @@ def make(a1, num1,a2, num2):
         line.set_ydata(yy(2 * np.pi * t / dur))  # 更新曲面
         return mplfig_to_npimage(fig_mpl) # 图形的RGB图像
     animation = mpy.VideoClip(make_frame_mpl, duration=dur)
-    return animation.write_gif("Lissarous Figures.gif", fps=120)
+    return animation.write_gif(chr, fps=120)
