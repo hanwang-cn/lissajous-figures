@@ -1,12 +1,13 @@
 from tkinter import *
 import Lissajous_Figures
 
-def make_the_Gif(chr1,chr2,chr3,chr4):
+def make_the_Gif(chr1,chr2,chr3,chr4, chr5):
     a1 = float(chr2)
     num1 = float(chr1)
     a2 = float(chr4)   
     num2 = float(chr3)
-    return Lissajous_Figures.make(a1, num1,a2, num2)
+    Chr = chr5
+    return Lissajous_Figures.make(a1, num1,a2, num2, Chr)
 def get(E, chr):
     E=Entry()
     chr=E.get()
@@ -18,7 +19,7 @@ frame2 = Frame(root)
 frame3 = Frame(root)
 frame4 = Frame(root)
 frame5 = Frame(root)
-# frame6 = Frame(root)
+frame6 = Frame(root)
 frame7 = Frame(root)
 root.title("Lissajous Figures")
 
@@ -53,17 +54,15 @@ E4.pack(side = LEFT)
 get4 = Button(frame5, text="Get!", font = 'consolas', command=get(E4,chr4))
 get4.pack(side=LEFT)
 
-'''label6= Label(frame6,text="Give a Name of this GIF(eg. hello.gif)",font = 'consolas', justify=LEFT)
- label6.pack(side=LEFT)
- E5 = Entry(frame6, bd = 2)
- E5.pack(side = LEFT)
- chr = E5.get()'''
+label6= Label(frame6,text="Give a Name of this Gif(eg. hello.gif)",font = 'consolas', justify=LEFT)
+label6.pack(side=LEFT)
+E5 = Entry(frame6, bd = 2)
+E5.pack(side = LEFT)
+chr = E5.get()
+get5 = Button(frame6, text="Get!", font = 'consolas', command=get(E5,chr5))
+get5.pack(side=LEFT)
 
-# num1 = float(chr1.strip("\t\r\n\"'"))
-# a1 = float(chr2.strip("\t\r\n\"'"))
-# num2 = float(chr3.strip("\t\r\n\"'"))
-# a2 = float(chr4.strip("\t\r\n\"'"))'''
-make_the_gif = Button(frame7, text="Make!", font = 'consolas')# command=make_the_Gif(chr,chr,chr,chr))
+make_the_gif = Button(frame7, text="Make!", font = 'consolas') # command=make_the_Gif(chr,chr,chr,chr))
 make_the_gif.pack(side=LEFT)
 # make_the_Gif(chr1,chr2,chr3,chr4)
 
@@ -72,6 +71,6 @@ frame2.pack(padx=20,pady=20)
 frame3.pack(padx=20,pady=20)
 frame4.pack(padx=20,pady=20)
 frame5.pack(padx=20,pady=20)
-# frame6.pack(padx=20,pady=20)
+frame6.pack(padx=20,pady=20)
 frame7.pack(padx=20,pady=20)
 root.mainloop()
