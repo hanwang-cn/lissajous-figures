@@ -9,7 +9,7 @@ def make_the_Gif(chr1,chr2,chr3,chr4, chr5):
     Chr = chr5
     return Lissajous_Figures.make(a1, num1,a2, num2, Chr)
 def get(E, chr):
-    E=Entry()
+    global Entry
     chr=E.get()
     return chr
 
@@ -74,3 +74,23 @@ frame5.pack(padx=20,pady=20)
 frame6.pack(padx=20,pady=20)
 frame7.pack(padx=20,pady=20)
 root.mainloop()
+
+
+# 注释和相应的解答
+
+
+'''手动
+按照该Tkinter的Entry控件：
+
+首先，你可以阅读从价值Entry与
+
+entry.get()
+其次，您可以将其绑定到tkinter.Variable（它使用自动生成的名称创建和包装Tcl全局变量）。通常，使用它的子类StringVar- 它str在获取/设置时将值转换为。
+
+v = tkinter.StringVar()
+entry = tk.Entry(root1, textvariable=v)
+
+<...>
+value = v.get()
+你可以看到，没有太大的区别，只增加了一个间接层。这两种方法都会让你得到一个str所以你需要解析它int()。
+但你可以使用一个IntVar而不是Variable（或StringVar）来解析它.get()（ValueError如果它不是一个有效的整数，它将会提升）。'''
