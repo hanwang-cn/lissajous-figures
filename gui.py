@@ -10,7 +10,7 @@ def make_the_Gif(chr1,chr2,chr3,chr4, chr5):
     return Lissajous_Figures.make(a1, num1,a2, num2, Chr)
 def get(E, chr):
     global Entry
-    chr=E.get()
+    chr=Entry.get()
     return chr
 
 root = Tk()
@@ -93,4 +93,8 @@ entry = tk.Entry(root1, textvariable=v)
 <...>
 value = v.get()
 你可以看到，没有太大的区别，只增加了一个间接层。这两种方法都会让你得到一个str所以你需要解析它int()。
-但你可以使用一个IntVar而不是Variable（或StringVar）来解析它.get()（ValueError如果它不是一个有效的整数，它将会提升）。'''
+但你可以使用一个IntVar而不是Variable（或StringVar）来解析它.get()（ValueError如果它不是一个有效的整数，它将会提升）。
+def guess():
+    global entry
+    guess = entry.get()
+    guessN = int(guess)'''
