@@ -8,10 +8,16 @@ def make_the_Gif(chr1,chr2,chr3,chr4, chr5):
     num2 = float(chr3)
     Chr = chr5
     return Lissajous_Figures.make(a1, num1,a2, num2, Chr)
-def get(E, chr):
+def get(chr):
     global Entry
     chr=Entry.get()
+    entry.get()
+    # 其次，您可以将其绑定到tkinter.Variable（它使用自动生成的名称创建和包装Tcl全局变量）。通常，使用它的子类StringVar- 它str在获取/设置时将值转换为。
+    v = tkinter.StringVar()
+    entry = tk.Entry(root1, textvariable=v)
     return chr
+    global Entry
+    entry = tkinter.Entry(root, textvariable = chr)
 
 root = Tk()
 frame1 = Frame(root)
