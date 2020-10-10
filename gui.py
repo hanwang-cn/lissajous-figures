@@ -8,7 +8,7 @@ def make_the_Gif(chr1,chr2,chr3,chr4, chr5):
     num2 = float(chr3)
     Chr = chr5
     return Lissajous_Figures.make(a1, num1,a2, num2, Chr)
-def get(chr):
+'''def get(chr):
     global Entry
     chr=Entry.get()
     entry.get()
@@ -17,7 +17,13 @@ def get(chr):
     entry = tk.Entry(root1, textvariable=v)
     return chr
     global Entry
-    entry = tkinter.Entry(root, textvariable = chr)
+    entry = tkinter.Entry(root, textvariable = chr)'''
+def get(chr):
+    global Entry
+    v = StringVar()
+    entry = Entry(root, textvariable = v)
+    chr = v.get()
+    return chr
 
 root = Tk()
 frame1 = Frame(root)
